@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chito Kitamenywa — Lead Product Designer, UI/UX & Product Manager</title>
+  <meta name="description" content="Portfolio of Chito Kitamenywa (Meshak), Co-founder, Product Manager, and Lead UI/UX Designer based in Beijing." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            night: '#0F172A',
+            slateText: '#475569',
+            roseBrand: '#E11D48',
+            blueBrand: '#2563EB',
+            surface: '#F8FAFC',
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(15, 23, 42, 0.06)',
+            'card-hover': '0 20px 40px -12px rgba(15, 23, 42, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #0F172A;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .gradient-name {
+      background: linear-gradient(135deg, #2563EB 0%, #E11D48 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-backdrop {
+      background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.96)),
+        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F8FAFC;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Toast Notification for Copy-to-Clipboard -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-night text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-3 text-sm font-medium border border-slate-700">
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span id="toast-message">Copied to clipboard!</span>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-night flex items-center gap-1">
+        CHITO<span class="text-roseBrand">.</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slateText">
+        <a href="#projects" class="hover:text-night transition-colors">Projects</a>
+        <a href="#about" class="hover:text-night transition-colors">Expertise & About</a>
+        <a href="#contact" class="bg-night text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-sm">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl border border-slate-200 text-night hover:bg-slate-50 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-2">
+      <a href="#projects" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slateText hover:bg-slate-50 hover:text-night">Projects</a>
+      <a href="#about" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slateText hover:bg-slate-50 hover:text-night">Expertise & About</a>
+      <a href="#contact" class="block px-4 py-2.5 rounded-xl text-sm font-semibold bg-night text-white text-center mt-2">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-backdrop relative border-b border-slate-200/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 sm:pt-24 sm:pb-28">
+      <div class="max-w-3xl">
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm mb-6">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span class="text-xs sm:text-sm font-medium text-slateText">Available for Product Leadership & Design Consulting</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-[64px] tracking-tight text-night leading-[1.08] mb-6">
+          Hi, I'm <br class="hidden sm:block" />
+          <span class="gradient-name">CHITO KITAMENYWA</span> <br />
+          Meshak
+        </h1>
+
+        <!-- Executive Value Proposition -->
+        <p class="text-base sm:text-lg lg:text-xl text-slateText leading-relaxed mb-8 max-w-2xl">
+          A Congolese <strong class="text-night font-semibold">Co-founder, Product Manager, and Lead UI/UX Designer</strong> based in Beijing with 4+ years of experience. I bridge business strategy, scalable design systems, and user-centric engineering to turn complex problems into intuitive digital ecosystems.
+        </p>
+
+        <!-- Primary & Secondary CTAs -->
+        <div class="flex flex-wrap items-center gap-3.5 mb-8">
+          <a href="#projects" class="inline-flex items-center justify-center gap-2 bg-night text-white px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base hover:bg-slate-800 transition-all shadow-soft">
+            <span>View Selected Work</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+          <a href="#contact" class="inline-flex items-center justify-center bg-white text-night border border-slate-300 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base hover:border-night hover:bg-slate-50 transition-all">
+            Get in Touch
+          </a>
+        </div>
+
+        <!-- Quick Social Icons -->
+        <div class="flex items-center gap-3">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slateText hover:text-blueBrand hover:border-blueBrand/40 transition-all shadow-sm">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a href="https://twitter.com/meshak_chito" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slateText hover:text-night hover:border-slate-400 transition-all shadow-sm">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:chitom2603@gmail.com" aria-label="Email" class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slateText hover:text-roseBrand hover:border-roseBrand/40 transition-all shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Executive Proof / Credibility Strip -->
+      <div class="mt-14 pt-8 border-t border-slate-200/80 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div>
+          <p class="font-display font-extrabold text-2xl sm:text-3xl text-night">4+ Years</p>
+          <p class="text-xs sm:text-sm text-slateText mt-1">Product & UI/UX Leadership</p>
+        </div>
+        <div>
+          <p class="font-display font-extrabold text-2xl sm:text-3xl text-roseBrand">7+ Products</p>
+          <p class="text-xs sm:text-sm text-slateText mt-1">Fintech, SaaS, AI & Web3</p>
+        </div>
+        <div>
+          <p class="font-display font-extrabold text-2xl sm:text-3xl text-night">0 → 1 Launches</p>
+          <p class="text-xs sm:text-sm text-slateText mt-1">iOS, Android & Enterprise SaaS</p>
+        </div>
+        <div>
+          <p class="font-display font-extrabold text-2xl sm:text-3xl text-blueBrand">MBA & Design</p>
+          <p class="text-xs sm:text-sm text-slateText mt-1">Business Strategy + Systems</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Projects Section -->
+  <section id="projects" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="inline-block px-3.5 py-1 rounded-full bg-slate-100 text-slateText text-xs font-semibold tracking-wide uppercase mb-3">
+            Selected Work
+          </span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-night tracking-tight">
+            Featured Products & Case Studies
+          </h2>
+          <p class="text-slateText text-base sm:text-lg mt-2 max-w-2xl">
+            Digital products and platform architectures crafted from strategic conception and design systems to production launch.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2" id="project-filters">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-night text-white transition-all">
+            All (7)
+          </button>
+          <button data-filter="fintech" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slateText hover:bg-slate-200 transition-all">
+            Fintech & Crypto
+          </button>
+          <button data-filter="saas" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slateText hover:bg-slate-200 transition-all">
+            SaaS & B2B
+          </button>
+          <button data-filter="mobile" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slateText hover:bg-slate-200 transition-all">
+            Mobile & AI
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid (7 Distinct Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+
+        <!-- Project 1: MainMoney App -->
+        <article data-category="fintech mobile" class="project-card group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col">
+          <div class="h-64 sm:h-72 bg-gradient-to-br from-slate-50 via-rose-50/40 to-blue-50/50 p-6 flex items-center justify-center relative overflow-hidden border-b border-slate-100">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full border border-slate-200 text-[11px] font-bold text-night shadow-sm">
+              Multi-Currency & Biometric Fintech
+            </div>
+            <div class="w-56 bg-night rounded-[28px] p-2.5 shadow-2xl transform group-hover:-translate-y-1.5 transition-transform duration-300 border-2 border-slate-800">
+              <div class="bg-white rounded-[20px] p-3.5 text-left">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-display font-extrabold text-xs text-night">Main<span class="text-roseBrand">Money</span></span>
+                  <span class="text-[10px] font-semibold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">CDF / USD</span>
+                </div>
+                <div class="bg-gradient-to-r from-night to-slate-800 rounded-xl p-3 text-white mb-2.5">
+                  <p class="text-[9px] text-slate-300 uppercase tracking-wider">Multi-Currency Balance</p>
+                  <p class="font-display font-bold text-base mt-0.5">$4,850.00</p>
+                  <div class="mt-2 flex items-center gap-1.5 text-[9px] text-rose-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-roseBrand"></span>
+                    Palm Vein Biometrics Active
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-1.5 text-[10px] font-semibold">
+                  <div class="bg-rose-50 text-roseBrand py-1.5 px-2 rounded-lg text-center">Palm Pay</div>
+                  <div class="bg-slate-100 text-night py-1.5 px-2 rounded-lg text-center">Group Vault</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-roseBrand uppercase tracking-wider">Co-founder, PM & Lead UI/UX</span>
+              <span class="text-xs font-medium text-slateText">iOS & Android</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-night mb-3">MainMoney App</h3>
+            <p class="text-slateText text-sm sm:text-base leading-relaxed mb-6 flex-1">
+              Multi-currency fintech platform built for seamless daily transactions and group financial management. Architected mobile UX, multi-signature collective savings flows, and rear-camera palm vein biometric payment experience from concept to App Store & Google Play launch.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Product Management</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Lead UI/UX</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Biometrics</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Design System</span>
+            </div>
+            <button onclick="openCaseStudy('mainmoney')" class="inline-flex items-center gap-2 text-sm font-bold text-night hover:text-roseBrand transition-colors w-fit">
+              <span>Read Case Study</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 2: MainPass Access Ecosystem -->
+        <article data-category="saas" class="project-card group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col">
+          <div class="h-64 sm:h-72 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 p-6 flex items-center justify-center relative overflow-hidden border-b border-slate-100">
+            <div class="w-full max-w-xs bg-white/95 backdrop-blur rounded-2xl p-4 shadow-2xl transform group-hover:-translate-y-1.5 transition-transform duration-300">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2.5 mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded-lg bg-blueBrand flex items-center justify-center text-white font-bold text-xs">M</div>
+                  <span class="font-display font-bold text-xs text-night">MainPass Enterprise</span>
+                </div>
+                <span class="text-[10px] font-semibold text-blueBrand bg-blue-50 px-2 py-0.5 rounded-full">B2B / B2G</span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
+                  <span class="text-[11px] font-semibold text-night">Access & Biometric Portal</span>
+                  <span class="text-[10px] font-bold text-emerald-600">99.8% Verified</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
+                    <p class="text-[9px] text-slateText">Time Logs</p>
+                    <p class="font-display font-bold text-xs text-night">1,420 Active</p>
+                  </div>
+                  <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
+                    <p class="text-[9px] text-slateText">Quota Rules</p>
+                    <p class="font-display font-bold text-xs text-blueBrand">Automated</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-blueBrand uppercase tracking-wider">Lead Product & UI/UX Designer</span>
+              <span class="text-xs font-medium text-slateText">Web & Biometric Portal</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-night mb-3">MainPass Access Ecosystem</h3>
+            <p class="text-slateText text-sm sm:text-base leading-relaxed mb-6 flex-1">
+              Comprehensive organizational access control platform combining MainPass Access, Time, and Quotas modules—including biometric enrollment portals engineered for enterprise and institutional deployments.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Product Architecture</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">B2B / B2G SaaS</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Design System</span>
+            </div>
+            <button onclick="openCaseStudy('mainpass')" class="inline-flex items-center gap-2 text-sm font-bold text-night hover:text-blueBrand transition-colors w-fit">
+              <span>Read Case Study</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 3: Patana — All-in-One WhatsApp AI Assistant -->
+        <article data-category="mobile" class="project-card group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col">
+          <div class="h-64 sm:h-72 bg-gradient-to-br from-emerald-50 via-teal-50/60 to-slate-100 p-6 flex items-center justify-center relative overflow-hidden border-b border-slate-100">
+            <div class="w-full max-w-xs bg-white rounded-2xl p-4 shadow-xl border border-slate-200/80 transform group-hover:-translate-y-1.5 transition-transform duration-300">
+              <div class="flex items-center gap-2.5 pb-2.5 mb-3 border-b border-slate-100">
+                <div class="w-7 h-7 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">P</div>
+                <div>
+                  <p class="font-display font-bold text-xs text-night">Patana AI Concierge</p>
+                  <p class="text-[10px] text-emerald-600 font-medium">● WhatsApp Verified Assistant</p>
+                </div>
+              </div>
+              <div class="space-y-2 text-[11px]">
+                <div class="bg-slate-100 text-night p-2.5 rounded-2xl rounded-tl-none max-w-[85%]">
+                  Book a boutique hotel & airport transfer in Kinshasa for Friday.
+                </div>
+                <div class="bg-emerald-600 text-white p-2.5 rounded-2xl rounded-tr-none ml-auto max-w-[85%]">
+                  Done! 3 curated stays + driver ready. Tap to confirm via Mobile Money.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">Lead UI/UX Designer</span>
+              <span class="text-xs font-medium text-slateText">Conversational AI</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-night mb-3">Patana — All-in-One WhatsApp AI Assistant</h3>
+            <p class="text-slateText text-sm sm:text-base leading-relaxed mb-6 flex-1">
+              Led the strategic product pivot into an all-in-one WhatsApp AI Assistant enabling frictionless accommodation, dining, and transport bookings across the Democratic Republic of the Congo.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Conversational UX</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Product Strategy</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Conversion Design</span>
+            </div>
+            <button onclick="openCaseStudy('patana')" class="inline-flex items-center gap-2 text-sm font-bold text-night hover:text-emerald-700 transition-colors w-fit">
+              <span>Read Case Study</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 4: Polele Mobile Commerce -->
+        <article data-category="fintech mobile" class="project-card group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col">
+          <div class="h-64 sm:h-72 bg-gradient-to-br from-indigo-50 via-slate-50 to-purple-50/70 p-6 flex items-center justify-center relative overflow-hidden border-b border-slate-100">
+            <div class="w-56 bg-white rounded-[26px] p-4 shadow-xl border border-slate-200/90 transform group-hover:-translate-y-1.5 transition-transform duration-300">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-display font-extrabold text-xs text-indigo-600">Polele.</span>
+                <span class="text-[10px] font-semibold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full">Merchant Wallet</span>
+              </div>
+              <div class="p-3 rounded-2xl bg-slate-50 border border-slate-100 mb-3">
+                <p class="text-[9px] text-slateText uppercase">Available Payout</p>
+                <p class="font-display font-bold text-sm text-night mt-0.5">1,240,000 CDF</p>
+                <div class="mt-2 inline-block text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
+                  Instant Mobile Money
+                </div>
+              </div>
+              <!-- Custom Floating Pill Bottom Bar Preview -->
+              <div class="h-8 rounded-full bg-night text-white flex items-center justify-around px-3 text-[10px] shadow-md">
+                <span class="text-indigo-300 font-bold">Home</span>
+                <span class="text-slate-400">Orders</span>
+                <span class="text-slate-400">Payout</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Lead UI/UX Designer</span>
+              <span class="text-xs font-medium text-slateText">Mobile App</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-night mb-3">Polele Mobile Commerce</h3>
+            <p class="text-slateText text-sm sm:text-base leading-relaxed mb-6 flex-1">
+              Designed the end-to-end mobile commerce experience, streamlined mobile money withdrawal flows, and a custom floating pill bottom navigation bar tailored for high-frequency mobile sellers and buyers.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Mobile Commerce</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Mobile Money UX</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Navigation Architecture</span>
+            </div>
+            <button onclick="openCaseStudy('polele')" class="inline-flex items-center gap-2 text-sm font-bold text-night hover:text-indigo-600 transition-colors w-fit">
+              <span>Read Case Study</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 5: Mon Jardin Agritech SaaS -->
+        <article data-category="saas" class="project-card group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col">
+          <div class="h-64 sm:h-72 bg-gradient-to-br from-amber-50/80 via-emerald-50/40 to-slate-100 p-6 flex items-center justify-center relative overflow-hidden border-b border-slate-100">
+            <div class="w-full max-w-xs bg-white rounded-2xl p-4 shadow-xl border border-slate-200/80 transform group-hover:-translate-y-1.5 transition-transform duration-300">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2.5 mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">MJ</div>
+                  <span class="font-display font-bold text-xs text-night">Mon Jardin • Almafrica</span>
+                </div>
+                <span class="text-[10px] font-semibold bg-amber-50 text-amber-800 px-2 py-0.5 rounded-full">Agritech SaaS</span>
+              </div>
+              <div class="grid grid-cols-3 gap-1.5 text-center mb-3">
+                <div class="p-2 rounded-xl bg-emerald-50/70">
+                  <p class="text-[9px] text-slateText">Field Data</p>
+                  <p class="font-display font-bold text-xs text-emerald-800">42 Plots</p>
+                </div>
+                <div class="p-2 rounded-xl bg-amber-50/70">
+                  <p class="text-[9px] text-slateText">Warehouse</p>
+                  <p class="font-display font-bold text-xs text-amber-800">18.4 Tons</p>
+                </div>
+                <div class="p-2 rounded-xl bg-slate-100">
+                  <p class="text-[9px] text-slateText">Logistics</p>
+                  <p class="font-display font-bold text-xs text-night">9 Active</p>
+                </div>
+              </div>
+              <div class="h-2 w-full rounded-full bg-slate-100 overflow-hidden flex">
+                <div class="bg-emerald-600 w-3/5"></div>
+                <div class="bg-amber-400 w-1/4"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-amber-700 uppercase tracking-wider">Lead Product & UI/UX Designer</span>
+              <span class="text-xs font-medium text-slateText">SaaS Platform</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-night mb-3">Mon Jardin Agritech SaaS</h3>
+            <p class="text-slateText text-sm sm:text-base leading-relaxed mb-6 flex-1">
+              Architected modular operational dashboards for Almafrica's agricultural platform, connecting field data collection, warehouse inventory tracking, and supply chain logistics into one intuitive web and mobile system.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Agritech SaaS</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Data Visualization</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Modular UI</span>
+            </div>
+            <button onclick="openCaseStudy('monjardin')" class="inline-flex items-center gap-2 text-sm font-bold text-night hover:text-amber-700 transition-colors w-fit">
+              <span>Read Case Study</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 6: mHome Service Marketplace -->
+        <article data-category="saas mobile" class="project-card group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col">
+          <div class="h-64 sm:h-72 bg-gradient-to-br from-sky-50 via-blue-50/50 to-slate-100 p-6 flex items-center justify-center relative overflow-hidden border-b border-slate-100">
+            <div class="w-full max-w-xs bg-white rounded-2xl p-4 shadow-xl border border-slate-200/80 transform group-hover:-translate-y-1.5 transition-transform duration-300">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-display font-extrabold text-xs text-night">m<span class="text-blueBrand">Home</span></span>
+                <span class="text-[10px] font-semibold bg-sky-50 text-blueBrand px-2 py-0.5 rounded-full">Service Marketplace</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100 mb-2.5 flex items-center justify-between">
+                <div>
+                  <p class="font-display font-bold text-xs text-night">Verified Home Specialists</p>
+                  <p class="text-[10px] text-slateText">Instant booking & escrow protection</p>
+                </div>
+                <span class="text-xs font-bold text-amber-500">★ 4.9</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-[10px] font-semibold">
+                <div class="bg-blueBrand text-white py-1.5 px-2.5 rounded-lg text-center">Book Provider</div>
+                <div class="bg-slate-100 text-night py-1.5 px-2.5 rounded-lg text-center">Live Chat</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-blueBrand uppercase tracking-wider">UI/UX & Web Product Designer</span>
+              <span class="text-xs font-medium text-slateText">Web & Tablet Platform</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-night mb-3">mHome Service Marketplace</h3>
+            <p class="text-slateText text-sm sm:text-base leading-relaxed mb-6 flex-1">
+              Comprehensive two-sided marketplace connecting homeowners with vetted service providers. Designed provider discovery, booking scheduling, real-time messaging, secure escrow payments, and verified review systems.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Marketplace UX</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Web Design</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Booking Flows</span>
+            </div>
+            <button onclick="openCaseStudy('mhome')" class="inline-flex items-center gap-2 text-sm font-bold text-night hover:text-blueBrand transition-colors w-fit">
+              <span>Read Case Study</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 7: Nova Polkadot Wallet -->
+        <article data-category="fintech mobile" class="project-card group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col">
+          <div class="h-64 sm:h-72 bg-gradient-to-br from-slate-950 via-slate-900 to-pink-950 p-6 flex items-center justify-center relative overflow-hidden border-b border-slate-100">
+            <div class="w-56 bg-slate-900 rounded-[28px] p-3.5 shadow-2xl border border-slate-700/80 text-white transform group-hover:-translate-y-1.5 transition-transform duration-300">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-display font-extrabold text-xs tracking-wider">NOVA <span class="text-pink-400 font-normal">WALLET</span></span>
+                <span class="text-[9px] font-semibold bg-pink-500/20 text-pink-300 px-2 py-0.5 rounded-full">Polkadot</span>
+              </div>
+              <div class="p-3 rounded-2xl bg-slate-800/80 border border-slate-700/60 mb-2.5">
+                <p class="text-[9px] text-slate-400 uppercase">Total Staked Assets</p>
+                <p class="font-display font-bold text-base text-white mt-0.5">1,840.50 DOT</p>
+                <p class="text-[10px] text-emerald-400 mt-1">+14.2% APY Active</p>
+              </div>
+              <div class="grid grid-cols-2 gap-1.5 text-[10px] font-semibold">
+                <div class="bg-pink-600 text-white py-1.5 rounded-lg text-center">Stake</div>
+                <div class="bg-slate-800 text-slate-200 py-1.5 rounded-lg text-center">Governance</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-pink-600 uppercase tracking-wider">UI/UX Product Redesign</span>
+              <span class="text-xs font-medium text-slateText">Web3 Mobile App</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-night mb-3">Nova Polkadot Wallet</h3>
+            <p class="text-slateText text-sm sm:text-base leading-relaxed mb-6 flex-1">
+              Interface redesign of the Nova Wallet mobile experience for the Polkadot ecosystem. Simplified multi-chain asset management, native DOT staking workflows, and decentralized governance interaction while preserving power-user clarity.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Web3 & Crypto</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Mobile Redesign</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-100 text-slateText text-xs font-medium">Staking UX</span>
+            </div>
+            <button onclick="openCaseStudy('nova')" class="inline-flex items-center gap-2 text-sm font-bold text-night hover:text-pink-600 transition-colors w-fit">
+              <span>Read Case Study</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me & Core Competencies Section -->
+  <section id="about" class="py-20 sm:py-28 bg-surface border-y border-slate-200/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left Column: Narrative & Executive Positioning -->
+        <div class="lg:col-span-5">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-white border border-slate-200 text-slateText text-xs font-semibold tracking-wide uppercase mb-4">
+            About Me
+          </span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-night tracking-tight leading-tight mb-6">
+            Bridging Business Strategy, Design & Product Execution
+          </h2>
+          <div class="space-y-4 text-slateText text-base leading-relaxed">
+            <p>
+              I'm a <strong class="text-night font-semibold">Co-founder, Product Manager, and Lead UI/UX Designer</strong> with a Master's background in Business Administration. Based in Beijing and building for global and African markets, I focus on creating scalable design systems and intuitive user experiences that drive measurable business growth.
+            </p>
+            <p>
+              From defining product roadmaps and brand identities to crafting pixel-perfect interfaces in Figma and accelerating delivery with AI-assisted workflows (Figma MCP, Cursor) and front-end foundations, I ensure every product is strategic, reliable, and built to scale.
+            </p>
+          </div>
+
+          <!-- Core Toolstack Pills -->
+          <div class="mt-8 pt-6 border-t border-slate-200">
+            <p class="text-xs font-bold uppercase tracking-wider text-slateText mb-3">Core Stack & Tools</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-night">Figma & Design Systems</span>
+              <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-night">Figma MCP & Cursor AI</span>
+              <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-night">HTML & CSS Foundations</span>
+              <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-night">Agile / Plane</span>
+              <span class="px-3 py-1.5 rounded-lg bg-amber-50/70 border border-amber-200/80 text-xs font-semibold text-amber-900">After Effects (Learning)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: 2x2 Grid of Core Competencies -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          
+          <!-- Pillar 1 -->
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-soft">
+            <div class="w-12 h-12 rounded-2xl bg-rose-50 text-roseBrand flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-night mb-2.5">Product & UI/UX Design</h3>
+            <p class="text-sm text-slateText leading-relaxed">
+              End-to-end iOS, Android, and Web SaaS architecture, user flows, wireframing, and high-fidelity interactive prototyping in Figma.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-soft">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blueBrand flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-night mb-2.5">Design Systems & AI</h3>
+            <p class="text-sm text-slateText leading-relaxed">
+              Scalable component libraries, auto-layout, design tokens, and AI-accelerated workflows (Figma MCP, Cursor) for rapid execution.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-soft">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-night mb-2.5">Product Management</h3>
+            <p class="text-sm text-slateText leading-relaxed">
+              Product vision, roadmap prioritization, agile sprint leadership, and full App Store & Google Play go-to-market execution.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-soft">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-night mb-2.5">Branding & Front-End</h3>
+            <p class="text-sm text-slateText leading-relaxed">
+              Brand identity, visual direction (currently learning After Effects for motion UI), and HTML/CSS foundations for seamless developer handoff.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-soft">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blueBrand flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-night mb-2.5">Design Systems & AI</h3>
+            <p class="text-sm text-slateText leading-relaxed">
+              Scalable component libraries, auto-layout, design tokens, and AI-accelerated workflows (Figma MCP, Cursor) for rapid execution.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-soft">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-night mb-2.5">Product Management</h3>
+            <p class="text-sm text-slateText leading-relaxed">
+              Product vision, roadmap prioritization, agile sprint leadership, and full App Store & Google Play go-to-market execution.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-soft">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-night mb-2.5">Branding & Front-End</h3>
+            <p class="text-sm text-slateText leading-relaxed">
+              Brand identity, motion UI (After Effects), and solid front-end foundations (HTML, CSS, React, Tailwind) for seamless developer handoff.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section ("Let's Work Together") -->
+  <section id="contact" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column -->
+        <div class="lg:col-span-5">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-slate-100 text-slateText text-xs font-semibold tracking-wide uppercase mb-4">
+            Let's Connect
+          </span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-night tracking-tight leading-tight mb-5">
+            Let's Work Together
+          </h2>
+          <p class="text-slateText text-base sm:text-lg leading-relaxed mb-8">
+            I'm always interested in discussing new product leadership roles, UI/UX consulting, or ambitious ventures. Reach out directly via email or connect on your preferred platform.
+          </p>
+          <a href="mailto:chitom2603@gmail.com" class="inline-flex items-center justify-center gap-2.5 bg-night text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-slate-800 transition-all shadow-soft">
+            <span>Get in Touch</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right Column: Interactive Contact Cards -->
+        <div class="lg:col-span-7 space-y-3.5">
+          
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-surface border border-slate-200/80 hover:border-blueBrand/40 hover:bg-white hover:shadow-soft transition-all">
+            <div class="flex items-center gap-4">
+              <div class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-night group-hover:text-blueBrand transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-slateText">LinkedIn</p>
+                <p class="font-display font-bold text-base text-night">Meshak Kitamenywa</p>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400 group-hover:text-night group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+
+          <!-- Twitter -->
+          <a href="https://twitter.com/meshak_chito" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-surface border border-slate-200/80 hover:border-slate-400 hover:bg-white hover:shadow-soft transition-all">
+            <div class="flex items-center gap-4">
+              <div class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-night">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-slateText">Twitter / X</p>
+                <p class="font-display font-bold text-base text-night">@meshak_chito</p>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400 group-hover:text-night group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+
+          <!-- Email (with Copy button) -->
+          <div class="flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-surface border border-slate-200/80 hover:bg-white hover:shadow-soft transition-all">
+            <a href="mailto:chitom2603@gmail.com" class="flex items-center gap-4 flex-1">
+              <div class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-night">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-slateText">Email</p>
+                <p class="font-display font-bold text-base text-night">chitom2603@gmail.com</p>
+              </div>
+            </a>
+            <button onclick="copyText('chitom2603@gmail.com', 'Email copied!')" aria-label="Copy Email" class="p-2.5 rounded-xl bg-white border border-slate-200 text-slateText hover:text-night hover:border-slate-300 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </button>
+          </div>
+
+          <!-- WeChat (with Copy button) -->
+          <div class="flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-surface border border-slate-200/80 hover:bg-white hover:shadow-soft transition-all">
+            <div class="flex items-center gap-4">
+              <div class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-emerald-600">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.5 13.5A1.5 1.5 0 1 1 10 12a1.5 1.5 0 0 1-1.5 1.5zm7 0A1.5 1.5 0 1 1 17 12a1.5 1.5 0 0 1-1.5 1.5zM12 3C6.48 3 2 6.92 2 11.75c0 2.75 1.46 5.2 3.75 6.81L4.8 21.5l3.25-1.63c1.25.38 2.58.63 3.95.63 5.52 0 10-3.92 10-8.75S17.52 3 12 3z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-slateText">WeChat ID</p>
+                <p class="font-display font-bold text-base text-night">m_kitam26</p>
+              </div>
+            </div>
+            <button onclick="copyText('m_kitam26', 'WeChat ID copied!')" aria-label="Copy WeChat ID" class="p-2.5 rounded-xl bg-white border border-slate-200 text-slateText hover:text-night hover:border-slate-300 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </button>
+          </div>
+
+          <!-- Mobile Phone (with Copy button) -->
+          <div class="flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-surface border border-slate-200/80 hover:bg-white hover:shadow-soft transition-all">
+            <a href="tel:+8618811352782" class="flex items-center gap-4 flex-1">
+              <div class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-night">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-slateText">Mobile Phone (Beijing)</p>
+                <p class="font-display font-bold text-base text-night">+86 188 1135 2782</p>
+              </div>
+            </a>
+            <button onclick="copyText('+86 188 1135 2782', 'Phone number copied!')" aria-label="Copy Phone" class="p-2.5 rounded-xl bg-white border border-slate-200 text-slateText hover:text-night hover:border-slate-300 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-20 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slateText">
+        <p>© 2026 Chito Kitamenywa. Designed & built with care.</p>
+        <p class="text-xs">Co-founder • Product Manager • Lead UI/UX Designer</p>
+      </footer>
+    </div>
+  </section>
+
+  <!-- Case Study Modal -->
+  <div id="case-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-night/60 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 relative">
+      <button onclick="closeCaseStudy()" aria-label="Close Modal" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-night transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div id="modal-content">
+        <!-- Dynamically populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Copy to Clipboard Helper (iFrame-safe fallback using execCommand)
+    function copyText(text, label) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(label || 'Copied to clipboard!');
+      } catch (err) {
+        showToast('Could not copy text');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    // Toast Feedback
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // Project Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update active button styling
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-night', 'text-white', 'active');
+          b.classList.add('bg-slate-100', 'text-slateText');
+        });
+        btn.classList.remove('bg-slate-100', 'text-slateText');
+        btn.classList.add('bg-night', 'text-white', 'active');
+
+        // Filter project cards
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-category') || '';
+          if (filter === 'all' || categories.includes(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Detailed Case Study Modal Data (All 7 Projects)
+    const caseStudies = {
+      mainmoney: {
+        badge: 'Flagship Fintech Product • iOS & Android',
+        title: 'MainMoney — Multi-Currency & Biometric Fintech',
+        role: 'Co-founder, Product Manager & Lead UI/UX Designer',
+        overview: 'MainMoney was built to solve fragmented mobile payments, lack of transparent group savings tools, and hardware friction across daily personal and merchant transactions.',
+        highlights: [
+          'Rear-Camera Palm Vein Biometrics: Designed an intuitive guided capture flow allowing users to register and pay with their palm using standard smartphone cameras—eliminating dedicated POS hardware.',
+          'Multi-Signature Group Savings: Engineered transparent collective vaults featuring percentage-based member voting rules for withdrawals.',
+          'Brand & Product Leadership: Established the brand identity ("Rapidité, simplicité et sécurité"), scalable Figma design system, and led cross-functional execution through App Store & Google Play launch.'
+        ],
+        impact: 'Shipped across iOS and Android with a unified Figma component architecture and seamless multi-currency (CDF/USD) user experience.'
+      },
+      mainpass: {
+        badge: 'Enterprise & Institutional SaaS',
+        title: 'MainPass Access & Biometric Ecosystem',
+        role: 'Lead Product & UI/UX Designer',
+        overview: 'Organizations and public institutions required a unified, auditable system to manage physical access, staff attendance, and resource quotas.',
+        highlights: [
+          'Unified Modular Architecture: Designed seamless workflows connecting MainPass Access, MainPass Time, and MainPass Quotas under one cohesive visual language.',
+          'Institutional Biometric Portals: Crafted high-clarity registration interfaces optimized for rapid identity enrollment and zero-error verification.',
+          'Scalable Design Tokens: Built a multi-product component library enabling rapid deployment of custom client portals.'
+        ],
+        impact: 'Streamlined enterprise onboarding and reduced administrative friction across access, attendance, and quota operations.'
+      },
+      patana: {
+        badge: 'Conversational AI & Travel Tech',
+        title: 'Patana — All-in-One WhatsApp AI Assistant',
+        role: 'Lead UI/UX Designer',
+        overview: 'Instead of forcing users to download another standalone booking app, we pivoted Patana into an intelligent conversational assistant directly inside WhatsApp.',
+        highlights: [
+          'Zero-Friction Conversational Flows: Mapped end-to-end booking journeys for hotels, restaurants, and local transport using natural language prompts and quick-reply cards.',
+          'Local Payment Integration: Simplified checkout confirmation steps tailored to mobile money habits across the DRC.',
+          'Brand & Digital Presence: Crafted the visual identity and web landing experience driving user acquisition into the AI assistant.'
+        ],
+        impact: 'Lowered user onboarding friction by meeting customers directly on the messaging platform they already use daily.'
+      },
+      polele: {
+        badge: 'Mobile Commerce & FinTech Flows',
+        title: 'Polele Mobile Commerce',
+        role: 'Lead UI/UX Designer',
+        overview: 'Polele needed a fast, high-trust mobile shopping and merchant management experience adapted to mobile-first users and local payout preferences.',
+        highlights: [
+          'Custom Floating Pill Navigation: Engineered an ergonomic, thumb-friendly floating bottom navigation bar for effortless switching between storefront, orders, and wallet.',
+          'Streamlined Mobile Money Withdrawals: Simplified merchant payout flows with clear fee breakdowns, instant status feedback, and saved mobile wallet presets.',
+          'Conversion-Focused Product Cards: Designed scannable catalog layouts optimized for low-bandwidth mobile connections.'
+        ],
+        impact: 'Delivered a cohesive mobile commerce interface reducing checkout and merchant payout steps.'
+      },
+      monjardin: {
+        badge: 'Agritech & Supply Chain SaaS',
+        title: 'Mon Jardin Agritech SaaS (Almafrica)',
+        role: 'Lead Product & UI/UX Designer',
+        overview: 'Agricultural operations require tight coordination between field agronomists, warehouse managers, and transport teams—often across disconnected tools.',
+        highlights: [
+          'End-to-End Operational Modules: Designed dedicated yet interconnected views for field harvest logging, warehouse stock levels, and fleet logistics.',
+          'Field-Ready Mobile & Web UI: Built high-contrast, structured forms and tables that remain legible outdoors on tablets as well as on desktop command centers.',
+          'Standardized Component Library: Established reusable data cards, status badges, and filtering patterns for rapid feature expansion.'
+        ],
+        impact: 'Unified field-to-warehouse visibility into a single modular SaaS platform.'
+      },
+      mhome: {
+        badge: 'Two-Sided Service Marketplace',
+        title: 'mHome Service Marketplace',
+        role: 'UI/UX & Web Product Designer',
+        overview: 'Homeowners struggle to find reliable, verified maintenance professionals, while skilled providers lack structured booking and payment tools.',
+        highlights: [
+          'Trust-First Discovery & Profiles: Designed transparent provider profiles showcasing verified credentials, transparent pricing, and structured client reviews.',
+          'Integrated Booking & Messaging: Created real-time scheduling and in-app chat flows to align scope before service confirmation.',
+          'Escrow-Backed Checkout: Designed clear milestone payment states protecting both customers and service providers.'
+        ],
+        impact: 'Created a complete web and tablet marketplace experience balancing discoverability, trust, and booking conversion.'
+      },
+      nova: {
+        badge: 'Web3 & Multi-Chain Crypto UX',
+        title: 'Nova Polkadot Wallet Redesign',
+        role: 'UI/UX Product Designer',
+        overview: 'Web3 wallets often overwhelm users with technical jargon and fragmented staking menus. This redesign focused on clarity, visual hierarchy, and effortless Polkadot ecosystem interaction.',
+        highlights: [
+          'Simplified DOT Staking Flows: Redesigned validator selection and reward tracking into clear, step-by-step cards with transparent APY metrics.',
+          'Unified Multi-Asset Portfolio: Organized cross-chain balances, transaction history, and crowdloan participation into a clean dark-mode interface.',
+          'Accessible Governance UI: Made on-chain referenda and voting status scannable for everyday token holders.'
+        ],
+        impact: 'Elevated visual polish and usability across core crypto asset management, staking, and governance journeys.'
+      }
+    };
+
+    function openCaseStudy(key) {
+      const data = caseStudies[key];
+      if (!data) return;
+
+      const modal = document.getElementById('case-modal');
+      const content = document.getElementById('modal-content');
+
+      content.innerHTML = `
+        <span class="inline-block px-3 py-1 rounded-full bg-rose-50 text-roseBrand text-xs font-bold mb-3">${data.badge}</span>
+        <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-night mb-1">${data.title}</h3>
+        <p class="text-sm font-semibold text-blueBrand mb-5">${data.role}</p>
+        
+        <div class="space-y-5 text-sm sm:text-base text-slateText leading-relaxed">
+          <div>
+            <h4 class="font-display font-bold text-night text-sm uppercase tracking-wider mb-1.5">Context & Challenge</h4>
+            <p>${data.overview}</p>
+          </div>
+
+          <div>
+            <h4 class="font-display font-bold text-night text-sm uppercase tracking-wider mb-2">Key Product & UX Contributions</h4>
+            <ul class="space-y-2.5">
+              ${data.highlights.map(item => `
+                <li class="flex items-start gap-2.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-roseBrand mt-2 shrink-0"></span>
+                  <span>${item}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-surface border border-slate-200">
+            <h4 class="font-display font-bold text-night text-xs uppercase tracking-wider mb-1">Outcome & Impact</h4>
+            <p class="text-night font-medium text-sm">${data.impact}</p>
+          </div>
+        </div>
+
+        <div class="mt-7 pt-5 border-t border-slate-100 flex justify-end gap-3">
+          <button onclick="closeCaseStudy()" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-semibold text-night hover:bg-slate-50">Close</button>
+          <a href="#contact" onclick="closeCaseStudy()" class="px-5 py-2.5 rounded-xl bg-night text-white text-sm font-semibold hover:bg-slate-800">Discuss This Project</a>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCaseStudy() {
+      const modal = document.getElementById('case-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal when clicking outside card
+    document.getElementById('case-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'case-modal') closeCaseStudy();
+    });
+  </script>
+</body>
+</html>
